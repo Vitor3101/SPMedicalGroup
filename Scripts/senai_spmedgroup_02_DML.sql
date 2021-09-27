@@ -43,6 +43,8 @@ VALUES ('Ligia','ligia@gmail.com',3,1,NULL),
 ('Roberto Possarle','roberto.possarle@spmedicalgroup.com.br',2,NULL,2),
 ('Helena Strada','helena.souza@spmedicalgroup.com.br',2,NULL,3)
 
+INSERT INTO USUARIO(Nome, Email, Senha, idTipoUsuario, idPaciente, idMedico) VALUES ('ADMIN','Admin@Admin.com','Admin123',1,null,null)
+
 INSERT INTO CONSULTA(idPaciente, idMedico, DataConsulta, idSituacao)
 VALUES (7,3,'01/20/2020',2),
        (2,2,'01/06/2020',3),
