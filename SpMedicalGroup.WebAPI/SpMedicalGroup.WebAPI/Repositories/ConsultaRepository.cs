@@ -15,7 +15,7 @@ namespace SpMedicalGroup.WebAPI.Repositories
         {
             Consultum consultaDesatualizada = new();
 
-            if (consultaAtualizada.IdMedico != 0 && consultaAtualizada.IdPaciente != 0 && consultaAtualizada.IdSituacao != 0)
+            if (consultaAtualizada.IdMedico != 0 && consultaAtualizada.IdPaciente != 0 && consultaAtualizada.IdSituacao != 0 || consultaAtualizada.IdSituacao > 3)
             {
                 consultaDesatualizada.IdPaciente = consultaAtualizada.IdPaciente;
                 consultaDesatualizada.IdMedico = consultaAtualizada.IdMedico;

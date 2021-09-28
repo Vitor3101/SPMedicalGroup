@@ -13,7 +13,7 @@ namespace SpMedicalGroup.WebAPI.Domains
             Usuarios = new HashSet<Usuario>();
         }
 
-        public short IdMedico { get; set; }
+        public  int IdMedico { get; set; }
         public string Crm { get; set; }
         public byte? IdClinica { get; set; }
         public byte? IdEspecialidade { get; set; }

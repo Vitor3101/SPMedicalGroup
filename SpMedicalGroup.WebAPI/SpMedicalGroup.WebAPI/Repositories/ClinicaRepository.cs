@@ -18,7 +18,7 @@ namespace SpMedicalGroup.WebAPI.Repositories
             {
                clinicaDesatualizada.NomeClinica = atualizarClinica.NomeClinica;
                clinicaDesatualizada.Cnpj = atualizarClinica.Cnpj;
-                return true;
+               return true;
             }
             
             if(atualizarClinica.NomeClinica != null)
