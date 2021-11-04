@@ -11,6 +11,7 @@ namespace SpMedicalGroup.WebAPI.Interfaces
     {
         Usuario Login(string email, string senha);
 
+        List<Usuario> ListarUsuarios();
         void Cadastrar(Usuario novoUsuario);
         void Atualizar(int idUsuario, Usuario usuarioAtualizado);
         void Deletar(int idUsuario);

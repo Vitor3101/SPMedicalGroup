@@ -42,8 +42,10 @@ VALUES ('Ligia','ligia@gmail.com',3,1,NULL),
 ('Ricardo Lemos','ricardo.lemos@spmedicalgroup.com.br1',2,NULL,1),
 ('Roberto Possarle','roberto.possarle@spmedicalgroup.com.br',2,NULL,2),
 ('Helena Strada','helena.souza@spmedicalgroup.com.br',2,NULL,3)
+GO
 
 INSERT INTO USUARIO(Nome, Email, Senha, idTipoUsuario, idPaciente, idMedico) VALUES ('ADMIN','Admin@Admin.com','Admin123',1,null,null)
+GO
 
 INSERT INTO CONSULTA(idPaciente, idMedico, DataConsulta, idSituacao)
 VALUES (7,3,'01/20/2020',2),
@@ -53,3 +55,4 @@ VALUES (7,3,'01/20/2020',2),
 	   (4,1,'02/07/2019',3),
 	   (7,3,'02/08/2020',1),
 	   (4,1,'03/08/2020',1)
+	   GO

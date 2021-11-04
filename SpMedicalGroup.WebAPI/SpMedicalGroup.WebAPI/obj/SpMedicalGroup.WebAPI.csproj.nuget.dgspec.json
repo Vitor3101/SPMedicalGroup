@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vitor\\OneDrive\\Área de Trabalho\\SPMedicalGroup\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI.csproj": {}
+    "C:\\Users\\45999057809\\Desktop\\SPMedicalGroup\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vitor\\OneDrive\\Área de Trabalho\\SPMedicalGroup\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI.csproj": {
+    "C:\\Users\\45999057809\\Desktop\\SPMedicalGroup\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vitor\\OneDrive\\Área de Trabalho\\SPMedicalGroup\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\45999057809\\Desktop\\SPMedicalGroup\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI.csproj",
         "projectName": "SpMedicalGroup.WebAPI",
-        "projectPath": "C:\\Users\\vitor\\OneDrive\\Área de Trabalho\\SPMedicalGroup\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI.csproj",
-        "packagesPath": "C:\\Users\\vitor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vitor\\OneDrive\\Área de Trabalho\\SPMedicalGroup\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI\\obj\\",
+        "projectPath": "C:\\Users\\45999057809\\Desktop\\SPMedicalGroup\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI.csproj",
+        "packagesPath": "C:\\Users\\45999057809\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\45999057809\\Desktop\\SPMedicalGroup\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\vitor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\45999057809\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -89,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -41,6 +41,11 @@ namespace SpMedicalGroup.WebAPI.Repositories
             ctx.SaveChanges();
         }
 
+        public List<Usuario> ListarUsuarios()
+        {
+            return ctx.Usuarios.ToList();
+        }
+
         public Usuario ListarPorCPF(string CPF)
         {
             Paciente paciente = new();
