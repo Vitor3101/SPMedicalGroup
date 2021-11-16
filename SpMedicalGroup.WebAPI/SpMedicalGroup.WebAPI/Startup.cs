@@ -19,11 +19,13 @@ namespace SpMedicalGroup.WebAPI
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Version = "v1", Title = "Gufi.webAPI" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Version = "v1", Title = "SpMedical.WebApi" });
 
             });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,7 +40,7 @@ namespace SpMedicalGroup.WebAPI
 
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Gufi.webAPI");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "SPMedical.WebApi");
                 c.RoutePrefix = string.Empty;
             });
 
