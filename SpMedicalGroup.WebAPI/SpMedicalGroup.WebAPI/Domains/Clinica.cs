@@ -13,7 +13,7 @@ namespace SpMedicalGroup.WebAPI.Domains
             Medicos = new HashSet<Medico>();
         }
 
-        public byte IdClinica { get; set; }
+        public int IdClinica { get; set; }
 
         //Perguntar se pode fazer o trabalho sem essa DataAnnotation ou se tem outra maneira de atualizar o CNPJ sem cair nesse erro.
         [Required(ErrorMessage = "O nome da clinica é obrigatório")]

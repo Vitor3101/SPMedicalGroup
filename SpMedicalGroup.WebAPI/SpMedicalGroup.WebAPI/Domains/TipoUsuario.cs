@@ -12,7 +12,7 @@ namespace SpMedicalGroup.WebAPI.Domains
             Usuarios = new HashSet<Usuario>();
         }
 
-        public byte IdTipoUsuario { get; set; }
+        public int IdTipoUsuario { get; set; }
         public string Tipo { get; set; }
 
         public virtual ICollection<Usuario> Usuarios { get; set; }

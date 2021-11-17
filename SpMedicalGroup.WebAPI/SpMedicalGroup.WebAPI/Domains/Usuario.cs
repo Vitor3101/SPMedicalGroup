@@ -11,9 +11,9 @@ namespace SpMedicalGroup.WebAPI.Domains
         public string Nome { get; set; }
         public string Email { get; set; }
         public string Senha { get; set; }
-        public byte? IdTipoUsuario { get; set; }
+        public int? IdTipoUsuario { get; set; }
         public int? IdPaciente { get; set; }
-        public short? IdMedico { get; set; }
+        public int? IdMedico { get; set; }
 
         public virtual Medico IdMedicoNavigation { get; set; }
         public virtual Paciente IdPacienteNavigation { get; set; }

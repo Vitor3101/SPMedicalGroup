@@ -32,7 +32,7 @@ namespace SpMedicalGroup.WebAPI.Contexts
             if (!optionsBuilder.IsConfigured)
             {
                 //optionsBuilder.UseSqlServer("Data Source=DESKTOP-BQNE63S\\SQLEXPRESS; initial catalog=SPCLINICALGROUP; user Id=sa; pwd=V013813523;");
-                optionsBuilder.UseSqlServer("Data Source=NOTE0113E5\\SQLEXPRESS; initial catalog=SPCLINICALGROUP; user Id=sa; pwd=senai@132;");
+                optionsBuilder.UseSqlServer("Data Source=NOTE0113E5\\SQLEXPRESS; initial catalog=SPCLINICALGROUP; user Id=sa; pwd=Senai@132;");
 
             }
         }
