@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6AAEWXb1Cqg4FxaBeSBN3NCNEuVArNZOJsIJLerYbME/+EcICKzkyy1wBNWKaAXo1vO7k5xoum/ZyVtjkjg9/A==",
+  "dgSpecHash": "SdsUoXKXEqHJnzqpM60nAS1Y/RG8/AQms5ElB9FnP7tNQ054yyokCNJYZl3hXq+gEwo3TbTlGjJAJxZw/9VLXA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\45999057809\\Desktop\\SPMedicalGroup\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI.csproj",
+  "projectFilePath": "C:\\Users\\45999057809\\Downloads\\SPMedicalGroup\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\45999057809\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\45999057809\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.10\\microsoft.aspnetcore.authentication.jwtbearer.5.0.10.nupkg.sha512",
