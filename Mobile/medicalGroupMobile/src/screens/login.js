@@ -43,8 +43,8 @@ export default class Login extends Component {
 
                 <view>
                     <image>
-                        <TextInput></TextInput>
-                        <TextInput></TextInput>
+                        <TextInput placeholder="Email"></TextInput>
+                        <TextInput placeholder="Senha"></TextInput>
                         <TouchableOpacity
                             style={styles.btnLogin}
                             onPress={this.realizarLogin}>
@@ -56,7 +56,4 @@ export default class Login extends Component {
             </view>
         )
     }
-
-
-
 }
