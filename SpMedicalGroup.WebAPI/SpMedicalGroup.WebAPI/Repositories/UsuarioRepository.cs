@@ -11,7 +11,7 @@ namespace SpMedicalGroup.WebAPI.Repositories
 {
     public class UsuarioRepository : IUsuarioRepository
     {
-        SPClinicalGroupContext ctx = new();
+        SpClinicalContext ctx = new();
         public void Atualizar(int idUsuario, Usuario usuarioAtualizado)
         {
             Usuario usuarioDesatualizado = ctx.Usuarios.Find(idUsuario);

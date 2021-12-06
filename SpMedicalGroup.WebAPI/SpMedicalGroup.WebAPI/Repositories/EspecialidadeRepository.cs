@@ -10,7 +10,7 @@ namespace SpMedicalGroup.WebAPI.Repositories
 {
     public class EspecialidadeRepository : IEspecialidadeRepository
     {
-        SPClinicalGroupContext ctx = new();
+        SpClinicalContext ctx = new();
         public void Cadastrar(Especialidade novaEspecialidade)
         {
             ctx.Especialidades.Add(novaEspecialidade);

@@ -10,7 +10,7 @@ namespace SpMedicalGroup.WebAPI.Repositories
 {
     public class ClinicaRepository : IClinicaRepository
     {
-        SPClinicalGroupContext ctx = new();
+        SpClinicalContext ctx = new();
         public bool Atualizar(int idClinica, Clinica atualizarClinica)
         {
             Clinica clinicaDesatualizada = new();

@@ -12,7 +12,7 @@ namespace SpMedicalGroup.WebAPI.Domains
             Consulta = new HashSet<Consultum>();
         }
 
-        public int IdSituacao { get; set; }
+        public byte IdSituacao { get; set; }
         public string Situacao1 { get; set; }
 
         public virtual ICollection<Consultum> Consulta { get; set; }
