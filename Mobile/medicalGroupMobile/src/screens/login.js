@@ -40,7 +40,6 @@ export default class Login extends Component {
     render() {
         return (
             <view>
-
                 <view>
                     <image>
                         <TextInput placeholder="Email"></TextInput>
@@ -52,8 +51,10 @@ export default class Login extends Component {
                         </TouchableOpacity>
                     </image>
                 </view>
-
             </view>
         )
     }
 }
+const styles = StyleSheet.create({
+
+});

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
     Image,
     StatusBar,
-    StylesSheet,
+    StyleSheet,
     View,
 } from 'react-native';
 
@@ -10,8 +10,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const bottomTab = createBottomTabNavigator();
 
-import Login from './login';
 import Listar from './listar';
+import Perfil from './perfil';
 
 export default class Main extends Component {
 
@@ -28,7 +28,7 @@ export default class Main extends Component {
                             if (route.name === 'Listar') {
                                 return (
                                     <image
-                                        source={require('..img/Icone_lista')}
+                                        source={require('../../assets/img/Iconelista.png')}
                                     />
                                 )
                             }
@@ -36,11 +36,17 @@ export default class Main extends Component {
                             if (route.name === 'Perfil') {
                                 return (
                                     <image
-                                        source={require('..img/Icone_perfil')}
+                                        source={require('../../assets/img/IconePerfil.png')}
                                     />
                                 )
                             }
                         },
+
+                        headerShown: false,
+                        tabBarShowLabel: false,
+                        tabBarActiveBackgroundColor: '#B727FF',
+                        tabBarInactiveBackgroundColor: '#DD99FF',
+                        tabBarStyle: { height: 50 }
                     })}
                 >
 
@@ -53,4 +59,8 @@ export default class Main extends Component {
 
     }
 };
+
+const styles = StyleSheet.create({
+
+});
 

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   SafeAreaView,
   ScrollView,
@@ -13,10 +14,14 @@ import {
   Header,
 } from 'react-native/Libraries/NewAppScreen';
 
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+const AuthStack = createStackNavigator();
+
 import Main from './src/screens/main'
 import Listar from './src/screens/listar'
 import Login from './src/screens/login'
-
 
 export default function Stack() {
 

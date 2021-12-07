@@ -15,15 +15,15 @@ export default class Listar extends Component {
         }
     }
 
-    buscarProjetos = async () => {
-        const resposta = await api.get('/Projetos');
+    buscarConsultas = async () => {
+        const resposta = await api.get('/');
 
         const dadosApi = resposta.data;
         this.setState({ listaConsultas: dadosApi });
     };
 
     componentDidMount() {
-        this.buscarProjetos();
+        this.buscarConsultas();
     }
 
     render() {
@@ -52,3 +52,7 @@ export default class Listar extends Component {
         </view>
     )
 }
+
+const styles = StyleSheet.create({
+
+});
