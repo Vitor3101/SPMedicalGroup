@@ -12,7 +12,7 @@ export default class Listar extends Component {
         super(props);
         this.state = {
             listaConsultas: [],
-        }
+        };
     }
 
     buscarConsultas = async () => {

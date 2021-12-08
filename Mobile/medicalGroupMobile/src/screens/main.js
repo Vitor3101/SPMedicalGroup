@@ -17,7 +17,7 @@ export default class Main extends Component {
 
     render() {
         return (
-            <view>
+            <View>
                 <buttonTab.Navigator
 
                     initialRouteName='Listar'
@@ -54,7 +54,7 @@ export default class Main extends Component {
                     <buttonTab.Screen name="Perfil" Component={Perfil} />
 
                 </buttonTab.Navigator>
-            </view>
+            </View>
         );
 
     }
