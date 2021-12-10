@@ -26,7 +26,7 @@ export default class Login extends Component {
     }
 
     realizarLogin = async () => {
-        const resposta = await api.post('/login', {
+        const resposta = await api.post('/Login', {
             email: this.state.email,
             senha: this.state.senha,
         });
@@ -34,7 +34,7 @@ export default class Login extends Component {
         await AsyncStorage.setItem('userToken', token);
 
         if (resposta.status == 200) {
-            console.warn("aki")
+            console.warn("Login Concluido")
             this.props.navigation.navigate('Listar');
         }
         console.warn(token);
@@ -54,11 +54,18 @@ export default class Login extends Component {
 
                     <TextInput
                         style={styles.inputLogin}
-                        placeholder="Email" />
+                        placeholder="Email"
+                        keyboardType="email-address"
+                        onChangeText={email => this.setState({ email })}
+                    />
 
                     <TextInput
                         style={styles.inputLogin}
-                        placeholder="Senha" />
+                        placeholder="Senha"
+                        keyboardType="default"
+                        secureTextEntry={true}
+                        onChangeText={senha => this.setState({ senha })}
+                    />
 
                     <TouchableOpacity
                         style={styles.btnLogin}
@@ -95,7 +102,8 @@ const styles = StyleSheet.create({
     inputLogin: {
         backgroundColor: '#fff',
         marginTop: 20,
-        width: '100%'
+        width: '100%',
+        borderRadius: 10,
     },
 
     btnLogin: {
@@ -104,7 +112,8 @@ const styles = StyleSheet.create({
         height: '10%',
         alignItems: 'center',
         justifyContent: 'center',
-        color: 'fff'
+        color: 'fff',
+        borderRadius: 10
     }
 
 

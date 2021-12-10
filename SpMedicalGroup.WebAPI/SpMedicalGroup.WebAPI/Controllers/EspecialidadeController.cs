@@ -21,26 +21,26 @@ namespace SpMedicalGroup.WebAPI.Controllers
             _especialidadeRepository = new EspecialidadeRepository();
         }
 
-        [HttpPost("Especialidades")]
+        [HttpPost]
         public IActionResult Cadastrar(Especialidade novaEspecialidade)
         {
             _especialidadeRepository.Cadastrar(novaEspecialidade);
             return StatusCode(201);
         }
 
-        [HttpGet("Especialidades")]
+        [HttpGet]
         public  IActionResult Listar()
         {
             return Ok(_especialidadeRepository.Listar());
         }
 
-        [HttpGet("Especialidade/{idEspecialidade}")]
+        [HttpGet("ListarPorId/{idEspecialidade}")]
         public IActionResult ListarId(int idEspecialidade)
         {
             return Ok(_especialidadeRepository.ListarPorId(idEspecialidade));
         }
 
-        [HttpDelete("Especialidade/{idEspecialidade}")]
+        [HttpDelete("Deletar/{idEspecialidade}")]
         public IActionResult Deletar(int idEspecialidade)
         {
             _especialidadeRepository.Deletar(idEspecialidade);

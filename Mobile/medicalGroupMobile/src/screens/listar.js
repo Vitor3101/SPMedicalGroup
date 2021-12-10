@@ -16,7 +16,7 @@ export default class Listar extends Component {
     }
 
     buscarConsultas = async () => {
-        const resposta = await api.get('/');
+        const resposta = await api.get('/Consulta');
 
         const dadosApi = resposta.data;
         this.setState({ listaConsultas: dadosApi });
@@ -28,31 +28,48 @@ export default class Listar extends Component {
 
     render() {
         return (
-            <view>
-                <view>
-                    <text>Minhas Consultas</text>
+            <View style={styles.main}>
+                <View style={styles.lista}>
+                    <Text>Minhas Consultas</Text>
                     <FlatList
                         contentContainerStyle={styles.mainBodyContent}
                         data={this.state.listaConsultas}
                         keyExtractor={item => item.idConsulta}
                         renderItem={this.renderItem} />
-                </view>
-            </view>
+                </View>
+            </View>
         );
     }
 
     renderItem = ({ item }) => (
-        <view styles={styles.apoio_lista}>
-            <view styles={styles.fundo_info} >
-                <text style={styles.usuario_nome}></text>
-                <text style={styles.consulta_especialidade}></text>
-                <text style={styles.consulta_endereco}></text>
-                <text style={styles.consulta_data}></text>
-            </view>
-        </view>
+        <View style={styles.apoio_lista}>
+            <View style={styles.fundo_info} >
+                <Text style={styles.usuario_nome}>NomeMedico</Text>
+                <Text style={styles.consulta_especialidade}>consulta_especialidade</Text>
+                <Text style={styles.consulta_endereco}>consulta_endereco</Text>
+                <Text style={styles.consulta_data}>{item.dataConsulta}</Text>
+            </View>
+        </View>
     )
 }
 
 const styles = StyleSheet.create({
+
+    main: {
+        backgroundColor: '#5CD17F',
+        height: '100%',
+        width: '100%',
+        alignItems: 'center'
+    },
+
+    lista: {
+        width: '80%'
+    },
+
+    apoio_lista: {
+        backgroundColor: '#55C276',
+        height: '40%'
+    }
+
 
 });

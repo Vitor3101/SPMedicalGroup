@@ -60,7 +60,7 @@ namespace SpMedicalGroup.WebAPI.Repositories
 
         public Usuario Login(string email, string senha)
         {
-            throw new NotImplementedException();
+            return ctx.Usuarios.FirstOrDefault(u => u.Email == email && u.Senha == senha);
         }
 
         public void SalvarPerfilBd(IFormFile foto, int id_usuario)

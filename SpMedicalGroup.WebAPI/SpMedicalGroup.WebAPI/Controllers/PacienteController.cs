@@ -21,7 +21,7 @@ namespace SpMedicalGroup.WebAPI.Controllers
             _pacienteRepository = new PacientesRepository();
         }
 
-        [HttpPost("Paciente")]
+        [HttpPost("Cadastrar")]
         public IActionResult Cadastrar(Paciente novoPaciente)
         {
             _pacienteRepository.Cadastrar(novoPaciente);
@@ -29,21 +29,21 @@ namespace SpMedicalGroup.WebAPI.Controllers
         }
 
 
-        [HttpGet("Pacientes/Listar")]
+        [HttpGet("Listar")]
         public IActionResult Listar()
         {
             _pacienteRepository.Listar();
             return Ok();
         }
 
-        [HttpDelete("Pacientes/{idUsuario}")]
+        [HttpDelete("Deletar/{idUsuario}")]
         public IActionResult Deletar(int idUsuario)
         {
             _pacienteRepository.Deletar(idUsuario);
             return Ok();
         }
 
-        [HttpGet("Pacientes/{idPaciente}")]
+        [HttpGet("Id/{idPaciente}")]
         public IActionResult ListarPorId(int idPaciente)
         {
             _pacienteRepository.ListarPorId(idPaciente);

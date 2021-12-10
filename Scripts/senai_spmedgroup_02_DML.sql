@@ -31,17 +31,17 @@ INSERT INTO MEDICO(CRM, idClinica, idEspecialidade)
 VALUES ('54356-SP',1,2),('53452-SP',1,17),('65463-SP',1,16)
 GO
 
-INSERT INTO USUARIO(Nome, Email, idTipoUsuario, idPaciente, idMedico)
-VALUES ('Ligia','ligia@gmail.com',3,1,NULL),
-('Alexandre','alexandre@gmail.com',3,2,NULL),
-('Fernando','fernando@gmail.com',3,3,NULL),
-('Henrique','henrique@gmail.com',3,4,NULL),
-('João','joao@hotmail.com',3,5,NULL),
-('Bruno','bruno@gmail.com',3,6,NULL),
-('Mariana','mariana@outlook.com',3,7,NULL),
-('Ricardo Lemos','ricardo.lemos@spmedicalgroup.com.br1',2,NULL,1),
-('Roberto Possarle','roberto.possarle@spmedicalgroup.com.br',2,NULL,2),
-('Helena Strada','helena.souza@spmedicalgroup.com.br',2,NULL,3)
+INSERT INTO USUARIO(Nome, Email, Senha, idTipoUsuario, idPaciente, idMedico)
+VALUES ('Ligia','ligia@gmail.com','123',3,1,NULL),
+('Alexandre','alexandre@gmail.com','123',3,2,NULL),
+('Fernando','fernando@gmail.com','123',3,3,NULL),
+('Henrique','henrique@gmail.com','123',3,4,NULL),
+('João','joao@hotmail.com','123',3,5,NULL),
+('Bruno','bruno@gmail.com','123',3,6,NULL),
+('Mariana','mariana@outlook.com','123',3,7,NULL),
+('Ricardo Lemos','ricardo.lemos@spmedicalgroup.com.br1','123',2,NULL,1),
+('Roberto Possarle','roberto.possarle@spmedicalgroup.com.br','123',2,NULL,2),
+('Helena Strada','helena.souza@spmedicalgroup.com.br','123',2,NULL,3)
 GO
 
 INSERT INTO USUARIO(Nome, Email, Senha, idTipoUsuario, idPaciente, idMedico) VALUES ('ADMIN','Admin@Admin.com','Admin123',1,null,null)

@@ -21,33 +21,32 @@ namespace SpMedicalGroup.WebAPI.Controllers
             _medicoRepository = new MedicoRepository();
         }
 
-        [HttpPost("Medicos")]
+        [HttpPost("Cadastrar")]
         public IActionResult Cadastrar(Medico novoMedico)
         {
             _medicoRepository.Cadastrar(novoMedico);
             return StatusCode(201);
         }
 
-        [HttpGet("Medicos")]
+        [HttpGet]
         public IActionResult Listar()
         {
             return Ok(_medicoRepository.Listar());
         }
 
-
-        [HttpGet("Medicos/{idMedico}")]
+        [HttpGet("Listar")]
         public IActionResult ListarPorId(int idMedico)
         {
             return Ok(_medicoRepository.ListarPorId(idMedico));
         }
 
-        [HttpGet("Medicos/{CRM}")]
+        [HttpGet("Crm/{CRM}")]
         public IActionResult ListarCrm(string CRM)
         {
             return Ok(_medicoRepository.ListarPorCRM(CRM));
         }
 
-        [HttpDelete("Medicos/{idMedico}")]
+        [HttpDelete("Id/{idMedico}")]
         public IActionResult Deletar(int idMedico)
         {
             _medicoRepository.Deletar(idMedico);
