@@ -34,20 +34,17 @@ export default class Login extends Component {
         await AsyncStorage.setItem('userToken', token);
 
         if (resposta.status == 200) {
-            console.warn("Login Concluido")
+            console.warn("Login Concluido com sucesso")
             this.props.navigation.navigate('Listar');
         }
-        console.warn(token);
     };
 
     render() {
         return (
             <View
-                style={styles.fundoLogin}
-            >
+                style={styles.fundoLogin}>
                 <View
-                    style={styles.apoioForm}
-                >
+                    style={styles.apoioForm}>
                     <Image
                         style={styles.logoSp}
                     />
@@ -69,7 +66,8 @@ export default class Login extends Component {
 
                     <TouchableOpacity
                         style={styles.btnLogin}
-                        onPress={this.realizarLogin}>
+                        onPress={this.realizarLogin}
+                        >
                         <Text style={styles.btnLoginText}>Entrar</Text>
                     </TouchableOpacity>
                 </View>

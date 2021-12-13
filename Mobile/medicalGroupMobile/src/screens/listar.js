@@ -35,7 +35,8 @@ export default class Listar extends Component {
                         contentContainerStyle={styles.mainBodyContent}
                         data={this.state.listaConsultas}
                         keyExtractor={item => item.idConsulta}
-                        renderItem={this.renderItem} />
+                        renderItem={this.renderItem} 
+                        />
                 </View>
             </View>
         );
@@ -43,10 +44,10 @@ export default class Listar extends Component {
 
     renderItem = ({ item }) => (
         <View style={styles.apoio_lista}>
-            <View style={styles.fundo_info} >
-                <Text style={styles.usuario_nome}>NomeMedico</Text>
-                <Text style={styles.consulta_especialidade}>consulta_especialidade</Text>
-                <Text style={styles.consulta_endereco}>consulta_endereco</Text>
+            <View style={styles.fundo_info}>
+                <Text style={styles.usuario_nome}>{item.nome}</Text>
+                <Text style={styles.consulta_especialidade}>{item.especialidade}</Text>
+                <Text style={styles.consulta_endereco}>{item.Clinica.endereco}</Text>
                 <Text style={styles.consulta_data}>{item.dataConsulta}</Text>
             </View>
         </View>
