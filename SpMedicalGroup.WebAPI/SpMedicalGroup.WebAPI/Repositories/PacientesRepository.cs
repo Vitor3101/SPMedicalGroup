@@ -48,17 +48,17 @@ namespace SpMedicalGroup.WebAPI.Repositories
 
         public List<Paciente> Listar()
         {
-            return ctx.Pacientes.ToList();
+            return ctx.Pacientes.Include(p => p.IdUsuarioNavigation.ToList();
         }
 
         public Paciente ListarPorCpf(string CPF)
         {
-            return ctx.Pacientes.FirstOrDefault(e => e.Cpf == CPF); 
+            return ctx.Pacientes.Include(p => p.IdUsuarioNavigation).FirstOrDefault(e => e.Cpf == CPF); 
         }
 
         public Paciente ListarPorId(int idPaciente)
         {
-            return ctx.Pacientes.Find(idPaciente);   
+            return ctx.Pacientes.Include(p => p.IdUsuarioNavigation).Find(idPaciente);   
         }
     }
 }
