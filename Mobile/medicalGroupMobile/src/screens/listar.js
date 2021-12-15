@@ -30,13 +30,13 @@ export default class Listar extends Component {
         return (
             <View style={styles.main}>
                 <View style={styles.lista}>
-                    <Text>Minhas Consultas</Text>
+                    <Text style={styles.titulo}>Minhas Consultas</Text>
                     <FlatList
                         contentContainerStyle={styles.mainBodyContent}
                         data={this.state.listaConsultas}
                         keyExtractor={item => item.idConsulta}
-                        renderItem={this.renderItem} 
-                        />
+                        renderItem={this.renderItem}
+                    />
                 </View>
             </View>
         );
@@ -45,9 +45,9 @@ export default class Listar extends Component {
     renderItem = ({ item }) => (
         <View style={styles.apoio_lista}>
             <View style={styles.fundo_info}>
-                <Text style={styles.usuario_nome}>{item.nome}</Text>
-                <Text style={styles.consulta_especialidade}>{item.especialidade}</Text>
-                <Text style={styles.consulta_endereco}>{item.Clinica.endereco}</Text>
+                <Text style={styles.usuario_nome}>{item.idMedicoNavigation.idUsuarioNavigation.Nome}</Text>
+                <Text style={styles.consulta_especialidade}>{item.idMedicoNavigation.idEspecialidadeNavigation.especialidade1}</Text>
+                <Text style={styles.consulta_endereco}>{item.idMedicoNavigation.idClinicaNavigation.Endereco}</Text>
                 <Text style={styles.consulta_data}>{item.dataConsulta}</Text>
             </View>
         </View>
@@ -67,9 +67,17 @@ const styles = StyleSheet.create({
         width: '80%'
     },
 
+    titulo: {
+        alignSelf: 'center'
+    },
+
     apoio_lista: {
         backgroundColor: '#55C276',
         height: '40%'
+    },
+
+    fundo_info: {
+        alignItems: 'center'
     }
 
 

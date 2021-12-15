@@ -1,4 +1,5 @@
-﻿using SpMedicalGroup.WebAPI.Contexts;
+﻿using Microsoft.EntityFrameworkCore;
+using SpMedicalGroup.WebAPI.Contexts;
 using SpMedicalGroup.WebAPI.Domains;
 using SpMedicalGroup.WebAPI.Interfaces;
 using System;
@@ -48,17 +49,17 @@ namespace SpMedicalGroup.WebAPI.Repositories
 
         public List<Paciente> Listar()
         {
-            return ctx.Pacientes.Include(p => p.IdUsuarioNavigation.ToList();
+            return ctx.Pacientes.ToList();
         }
 
         public Paciente ListarPorCpf(string CPF)
         {
-            return ctx.Pacientes.Include(p => p.IdUsuarioNavigation).FirstOrDefault(e => e.Cpf == CPF); 
+            return ctx.Pacientes.FirstOrDefault(e => e.Cpf == CPF); 
         }
 
         public Paciente ListarPorId(int idPaciente)
         {
-            return ctx.Pacientes.Include(p => p.IdUsuarioNavigation).Find(idPaciente);   
+            return ctx.Pacientes.Find(idPaciente);   
         }
     }
 }

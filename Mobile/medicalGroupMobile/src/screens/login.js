@@ -10,6 +10,8 @@ import {
     TextInput,
 } from 'react-native';
 
+import logo from '../../assets/img/SPMedical_Logo.png'
+
 import { useNavigation } from "@react-navigation/native";
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -20,8 +22,8 @@ export default class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: '',
-            senha: ''
+            email: 'Admin@Admin.com',
+            senha: 'Admin123'
         };
     }
 
@@ -43,11 +45,11 @@ export default class Login extends Component {
         return (
             <View
                 style={styles.fundoLogin}>
-                <View
-                    style={styles.apoioForm}>
-                    <Image
-                        style={styles.logoSp}
-                    />
+                <Image
+                    source={logo}
+                    style={styles.logoSp}
+                />
+                <View style={styles.apoioForm}>
 
                     <TextInput
                         style={styles.inputLogin}
@@ -67,7 +69,7 @@ export default class Login extends Component {
                     <TouchableOpacity
                         style={styles.btnLogin}
                         onPress={this.realizarLogin}
-                        >
+                    >
                         <Text style={styles.btnLoginText}>Entrar</Text>
                     </TouchableOpacity>
                 </View>
@@ -82,37 +84,39 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'space-between'
     },
 
     logoSp: {
-        width: '70%',
-        height: '20%'
+        width: '43%',
+        height: '30%',
+        marginTop: '15%'
     },
 
     apoioForm: {
-        width: '80%',
-        height: '50%',
+        width: '75%',
+        height: '30%',
         justifyContent: 'space-between',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginBottom: '25%'
     },
 
     inputLogin: {
         backgroundColor: '#fff',
         marginTop: 20,
         width: '100%',
+        height: '25%',
         borderRadius: 10,
     },
 
     btnLogin: {
         backgroundColor: '#5CD17F',
-        width: '25%',
-        height: '10%',
+        width: '40%',
+        height: '20%',
         alignItems: 'center',
         justifyContent: 'center',
         color: 'fff',
-        borderRadius: 10
-    }
-
-
+        borderRadius: 10,
+        marginTop: '10%'
+    },
 });

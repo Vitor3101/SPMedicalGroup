@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -25,6 +26,13 @@ namespace SpMedicalGroup.WebAPI
                 c.SwaggerDoc("v1", new OpenApiInfo { Version = "v1", Title = "SpMedical.WebApi" });
 
             });
+
+            services
+                .AddControllers()
+                .AddNewtonsoftJson(options => {
+                    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                    options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+                });
 
         }
 

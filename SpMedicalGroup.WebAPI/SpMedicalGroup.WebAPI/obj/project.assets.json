@@ -26,7 +26,7 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-      "Microsoft.AspNetCore.JsonPatch/5.0.10": {
+      "Microsoft.AspNetCore.JsonPatch/5.0.12": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
@@ -39,10 +39,10 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.JsonPatch.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Mvc.NewtonsoftJson/5.0.10": {
+      "Microsoft.AspNetCore.Mvc.NewtonsoftJson/5.0.12": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.JsonPatch": "5.0.10",
+          "Microsoft.AspNetCore.JsonPatch": "5.0.12",
           "Newtonsoft.Json": "12.0.2",
           "Newtonsoft.Json.Bson": "1.0.2"
         },
@@ -2303,10 +2303,10 @@
         "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.JsonPatch/5.0.10": {
-      "sha512": "mWblC4aXXHBwKqBOW1J9hF/TKLOyyiaBucoEiLFVgmAMLKe2yHFygmWD4mgvlLEr68w+BqO9RelGTrczZpImrg==",
+    "Microsoft.AspNetCore.JsonPatch/5.0.12": {
+      "sha512": "YIatogsp7E1zCTlY9H2AG0lxPHHQ7o1Wy9thydeMx++CD81WBCAoeLjSdR4M9+Jz7U3Ujqhl9T1gH7vzNTMI4w==",
       "type": "package",
-      "path": "microsoft.aspnetcore.jsonpatch/5.0.10",
+      "path": "microsoft.aspnetcore.jsonpatch/5.0.12",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2316,14 +2316,14 @@
         "lib/net461/Microsoft.AspNetCore.JsonPatch.xml",
         "lib/netstandard2.0/Microsoft.AspNetCore.JsonPatch.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.JsonPatch.xml",
-        "microsoft.aspnetcore.jsonpatch.5.0.10.nupkg.sha512",
+        "microsoft.aspnetcore.jsonpatch.5.0.12.nupkg.sha512",
         "microsoft.aspnetcore.jsonpatch.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Mvc.NewtonsoftJson/5.0.10": {
-      "sha512": "qAaZsKeOOJ8EfGPCAnnZqAQ7lnkj+UcglYcrxXvGbnThpV10cRHy7BruQYPpO/hEBtIUd6Ncp31LSK6LPQFHqA==",
+    "Microsoft.AspNetCore.Mvc.NewtonsoftJson/5.0.12": {
+      "sha512": "YRN5arw9mFDXor6tPVdwMzi8m2V15n3DUFF2iG5QQkBQuR9sKGU4CbyQ3HIjXDln6ChH02K/9HCGsnRtPAv8hg==",
       "type": "package",
-      "path": "microsoft.aspnetcore.mvc.newtonsoftjson/5.0.10",
+      "path": "microsoft.aspnetcore.mvc.newtonsoftjson/5.0.12",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2331,7 +2331,7 @@
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net5.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll",
         "lib/net5.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.xml",
-        "microsoft.aspnetcore.mvc.newtonsoftjson.5.0.10.nupkg.sha512",
+        "microsoft.aspnetcore.mvc.newtonsoftjson.5.0.12.nupkg.sha512",
         "microsoft.aspnetcore.mvc.newtonsoftjson.nuspec"
       ]
     },
@@ -7733,7 +7733,7 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 5.0.10",
-      "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 5.0.10",
+      "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 5.0.12",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.10",
       "Microsoft.EntityFrameworkCore.SqlServer.Design >= 1.1.6",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.10",
@@ -7748,11 +7748,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\45999057809\\Downloads\\SPMedicalGroup\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\45999057809\\Desktop\\SPMedicalGroup\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI.csproj",
       "projectName": "SpMedicalGroup.WebAPI",
-      "projectPath": "C:\\Users\\45999057809\\Downloads\\SPMedicalGroup\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI.csproj",
+      "projectPath": "C:\\Users\\45999057809\\Desktop\\SPMedicalGroup\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI.csproj",
       "packagesPath": "C:\\Users\\45999057809\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\45999057809\\Downloads\\SPMedicalGroup\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI\\obj\\",
+      "outputPath": "C:\\Users\\45999057809\\Desktop\\SPMedicalGroup\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\45999057809\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7787,7 +7787,7 @@
           },
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
             "target": "Package",
-            "version": "[5.0.10, )"
+            "version": "[5.0.12, )"
           },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
@@ -7834,7 +7834,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

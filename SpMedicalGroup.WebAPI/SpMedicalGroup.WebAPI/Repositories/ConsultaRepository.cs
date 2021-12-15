@@ -1,4 +1,5 @@
-﻿using SpMedicalGroup.WebAPI.Contexts;
+﻿using Microsoft.EntityFrameworkCore;
+using SpMedicalGroup.WebAPI.Contexts;
 using SpMedicalGroup.WebAPI.Domains;
 using SpMedicalGroup.WebAPI.Interfaces;
 using System;
@@ -53,7 +54,7 @@ namespace SpMedicalGroup.WebAPI.Repositories
 
         public List<Consultum> Listar()
         {
-            return ctx.Consulta.ToList();
+            return ctx.Consulta.Include(c => c.IdMedicoNavigation).Include(c => c.IdPacienteNavigation).Include(c => c.IdSituacaoNavigation).ToList();
         }
 
         public Consultum ListarPorId(int idConsulta)
