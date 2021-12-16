@@ -28,13 +28,6 @@ namespace SpMedicalGroup.WebAPI.Controllers
             return Ok(_usuarioRepository.ListarUsuarios());
         }
 
-
-        [HttpGet("/Usuarios/Cpf/{Cpf}")]
-        public IActionResult ListarPorId(string Cpf)
-        {
-            return Ok(_usuarioRepository.ListarPorCPF(Cpf));
-        }
-
         
         [HttpGet("/Usuarios/id/{idUsuario}")]
         public IActionResult ListarPorId(int idUsuario)

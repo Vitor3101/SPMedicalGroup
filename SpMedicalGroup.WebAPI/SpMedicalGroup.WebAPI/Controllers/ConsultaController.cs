@@ -28,13 +28,13 @@ namespace SpMedicalGroup.WebAPI.Controllers
             return StatusCode(201);
         }
 
-        [HttpGet]
-        public IActionResult ListarConsultas()
+        [HttpGet("Minhas/{idUsuario}")]
+        public IActionResult ListarConsultas(int idUsuario)
         {
-            return Ok(_ConsultaRepository.Listar());
+            return Ok(_ConsultaRepository.ListarMinhas(idUsuario));
         }
 
-        [HttpGet("ListarPorId/{idConsulta}")]
+        [HttpGet("id/{idConsulta}")]
         public IActionResult ListarConsulta(int idConsulta)
         {
             return Ok(_ConsultaRepository.ListarPorId(idConsulta));

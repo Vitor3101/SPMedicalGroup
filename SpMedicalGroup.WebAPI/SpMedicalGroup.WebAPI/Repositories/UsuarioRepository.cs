@@ -11,7 +11,7 @@ namespace SpMedicalGroup.WebAPI.Repositories
 {
     public class UsuarioRepository : IUsuarioRepository
     {
-        SpClinicalContext ctx = new();
+        SPClinicalContext ctx = new();
         public void Atualizar(int idUsuario, Usuario usuarioAtualizado)
         {
             Usuario usuarioDesatualizado = ctx.Usuarios.Find(idUsuario);
@@ -43,14 +43,15 @@ namespace SpMedicalGroup.WebAPI.Repositories
 
         public List<Usuario> ListarUsuarios()
         {
-            return ctx.Usuarios.ToList();
-        }
-
-        public Usuario ListarPorCPF(string CPF)
-        {
-            Paciente paciente = new();
-            paciente = ctx.Pacientes.FirstOrDefault(e => e.Cpf == CPF);
-            return ctx.Usuarios.FirstOrDefault(e => e.IdPaciente == paciente.IdPaciente);
+            return ctx.Usuarios.Select(u =>  new Usuario
+            {
+                Email = u.Email,
+                Nome = u.Nome,
+                IdTipoUsuarioNavigation = new TipoUsuario()
+                {
+                    Tipo = u.IdTipoUsuarioNavigation.Tipo
+                }
+            }).ToList();
         }
 
         public Usuario ListarPorId(int idUsuario)

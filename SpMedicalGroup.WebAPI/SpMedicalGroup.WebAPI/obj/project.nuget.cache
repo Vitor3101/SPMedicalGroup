@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "fuuyMpac5DeLpUVoc+wVQ45x8aBmDLyhJQ6H/gaduxnFPoyXdW4G/yMS05Zifhxt62AxQCwzI8yzv2mjUlNFnw==",
+  "dgSpecHash": "fLS5h+DDlHrlat/u/qMmVWfQoA6S+AxsgC7Yh4VyqTAokVr1LBertIQYx2WsteEhivzyaRRtYLo+D0JFvxWZEQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\45999057809\\Desktop\\SPMedicalGroup\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI\\SpMedicalGroup.WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\45999057809\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\45999057809\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.10\\microsoft.aspnetcore.authentication.jwtbearer.5.0.10.nupkg.sha512",
-    "C:\\Users\\45999057809\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\5.0.12\\microsoft.aspnetcore.jsonpatch.5.0.12.nupkg.sha512",
-    "C:\\Users\\45999057809\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\5.0.12\\microsoft.aspnetcore.mvc.newtonsoftjson.5.0.12.nupkg.sha512",
+    "C:\\Users\\45999057809\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\5.0.10\\microsoft.aspnetcore.jsonpatch.5.0.10.nupkg.sha512",
+    "C:\\Users\\45999057809\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\5.0.10\\microsoft.aspnetcore.mvc.newtonsoftjson.5.0.10.nupkg.sha512",
     "C:\\Users\\45999057809\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\45999057809\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\45999057809\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",

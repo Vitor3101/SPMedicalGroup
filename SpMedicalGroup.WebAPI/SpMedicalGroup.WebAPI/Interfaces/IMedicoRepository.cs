@@ -12,7 +12,6 @@ namespace SpMedicalGroup.WebAPI.Interfaces
         Medico ListarPorId(int idMedico);
         Medico ListarPorCRM(string CRM);
         void Cadastrar(Medico novoMedico);
-        bool Atualizar(int idMedico, Medico atualizarMedico);
         void Deletar(int idMedico);
     }
 }

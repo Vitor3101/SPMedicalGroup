@@ -11,21 +11,7 @@ namespace SpMedicalGroup.WebAPI.Repositories
 {
     public class ConsultaRepository : IConsultaRepository
     {
-        SpClinicalContext ctx = new();
-        public bool Atualizar(int idConsulta, Consultum consultaAtualizada)
-        {
-            Consultum consultaDesatualizada = new();
-
-            if (consultaAtualizada.IdMedico != 0 && consultaAtualizada.IdPaciente != 0 && consultaAtualizada.IdSituacao != 0 || consultaAtualizada.IdSituacao > 3)
-            {
-                consultaDesatualizada.IdPaciente = consultaAtualizada.IdPaciente;
-                consultaDesatualizada.IdMedico = consultaAtualizada.IdMedico;
-                consultaDesatualizada.DataConsulta = consultaAtualizada.DataConsulta;
-                ctx.SaveChanges();
-                return true;
-            }
-            return false;
-        }
+        SPClinicalContext ctx = new();
 
         public bool AtualizarSituação(int idConsulta, Consultum situacaoAtualizada)
         {
@@ -40,8 +26,22 @@ namespace SpMedicalGroup.WebAPI.Repositories
             return false;
         }
 
+        public void AtualizarDescricao(string novaDesc, int id)
+        {
+            Consultum consultaBuscada = ListarPorId(id);
+
+            if (novaDesc != null)
+            {
+                consultaBuscada.Descricao = novaDesc;
+                ctx.Consulta.Update(consultaBuscada);
+                ctx.SaveChanges();
+            }
+        }
+
         public void Cadastrar(Consultum novaConsulta)
         {
+            novaConsulta.Descricao = "";
+
             ctx.Consulta.Add(novaConsulta);
             ctx.SaveChanges();
         }
@@ -52,24 +52,91 @@ namespace SpMedicalGroup.WebAPI.Repositories
             ctx.SaveChanges();
         }
 
-        public List<Consultum> Listar()
+        public List<Consultum> ListarMinhas(int idUsuarioLogado)
         {
-            return ctx.Consulta.Include(c => c.IdMedicoNavigation).Include(c => c.IdPacienteNavigation).Include(c => c.IdSituacaoNavigation).ToList();
+            Medico medicoLogado = ctx.Medicos.FirstOrDefault(m => m.IdUsuario == idUsuarioLogado);
+            Paciente pacienteLogado = ctx.Pacientes.FirstOrDefault(p => p.IdUsuario == idUsuarioLogado);
+
+            int idPaciente = pacienteLogado.IdPaciente;
+            int idMedico = medicoLogado.IdMedico;
+
+            if (medicoLogado != null)
+            {
+                return ctx.Consulta.Where(c => c.IdMedico == idMedico).AsNoTracking().Select(c => new Consultum()
+                {
+                    DataConsulta = c.DataConsulta,
+                    IdConsulta = c.IdConsulta,
+                    Descricao = c.Descricao,
+                    IdMedicoNavigation = new Medico()
+                    {
+                        Crm = c.IdMedicoNavigation.Crm,
+                        IdUsuarioNavigation = new Usuario()
+                        {
+                            Nome = c.IdMedicoNavigation.IdUsuarioNavigation.Nome,
+                            Email = c.IdMedicoNavigation.IdUsuarioNavigation.Email,
+                        },
+                        IdClinicaNavigation = new Clinica()
+                        {
+                            NomeClinica = c.IdMedicoNavigation.IdClinicaNavigation.NomeClinica
+                        }
+                    },
+                    IdPacienteNavigation = new Paciente()
+                    {
+                        Cpf = c.IdPacienteNavigation.Cpf,
+                        Telefone = c.IdPacienteNavigation.Telefone,
+                        IdUsuarioNavigation = new Usuario()
+                        {
+                            Nome = c.IdPacienteNavigation.IdUsuarioNavigation.Nome,
+                            Email = c.IdPacienteNavigation.IdUsuarioNavigation.Email
+                        }
+                    },
+                    IdSituacaoNavigation = new Situacao()
+                    {
+                        Situacao1 = c.IdSituacaoNavigation.Situacao1
+                    }
+                }).ToList();
+            }
+            else
+            {
+                return ctx.Consulta.Where(c => c.IdPaciente == idPaciente).AsNoTracking().Select(p => new Consultum()
+                {
+                    DataConsulta = p.DataConsulta,
+                    IdConsulta = p.IdConsulta,
+                    Descricao = p.Descricao,
+                    IdMedicoNavigation = new Medico()
+                    {
+                        Crm = p.IdMedicoNavigation.Crm,
+                        IdUsuarioNavigation = new Usuario()
+                        {
+                            Nome = p.IdMedicoNavigation.IdUsuarioNavigation.Nome,
+                            Email = p.IdMedicoNavigation.IdUsuarioNavigation.Email
+                        },
+                        IdClinicaNavigation = new Clinica()
+                        {
+                            NomeClinica = p.IdMedicoNavigation.IdClinicaNavigation.NomeClinica
+                        }
+                    },
+                    IdPacienteNavigation = new Paciente()
+                    {
+                        Cpf = p.IdPacienteNavigation.Cpf,
+                        Telefone = p.IdPacienteNavigation.Telefone,
+                        IdUsuarioNavigation = new Usuario()
+                        {
+                            Nome = p.IdPacienteNavigation.IdUsuarioNavigation.Nome,
+                            Email = p.IdPacienteNavigation.IdUsuarioNavigation.Email
+                        }
+                    },
+                    IdSituacaoNavigation = new Situacao()
+                    {
+                        Situacao1 = p.IdSituacaoNavigation.Situacao1
+                    }
+                }).ToList();
+            };
         }
 
         public Consultum ListarPorId(int idConsulta)
         {
             return ctx.Consulta.Find(idConsulta);
-        }
-
-        public Consultum ListarPorIdMedico(int idMedico)
-        {
-            return ctx.Consulta.FirstOrDefault(e => e.IdMedico == idMedico);
-        }
-
-        public Consultum ListarPorIdPaciente(int idPaciente)
-        {
-            return ctx.Consulta.FirstOrDefault(e => e.IdPaciente == idPaciente);
         }
     }
 }

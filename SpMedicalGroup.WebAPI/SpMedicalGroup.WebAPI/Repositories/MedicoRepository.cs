@@ -1,4 +1,5 @@
-﻿using SpMedicalGroup.WebAPI.Contexts;
+﻿using Microsoft.EntityFrameworkCore;
+using SpMedicalGroup.WebAPI.Contexts;
 using SpMedicalGroup.WebAPI.Domains;
 using SpMedicalGroup.WebAPI.Interfaces;
 using System;
@@ -10,21 +11,7 @@ namespace SpMedicalGroup.WebAPI.Repositories
 {
     public class MedicoRepository : IMedicoRepository
     {
-        SpClinicalContext ctx = new();
-        public bool Atualizar(int idMedico, Medico atualizarMedico)
-        {
-            Medico medicoDesatualizado = new();
-
-            if (atualizarMedico.IdClinica != null && atualizarMedico.IdEspecialidade != null)
-            {
-                medicoDesatualizado.Crm = atualizarMedico.Crm;
-                medicoDesatualizado.IdClinica = atualizarMedico.IdClinica;
-                medicoDesatualizado.IdEspecialidade = atualizarMedico.IdEspecialidade;
-                ctx.SaveChanges();
-                return true;
-            }
-            return false;
-        }
+        SPClinicalContext ctx = new();
 
         public void Cadastrar(Medico novoMedico)
         {
@@ -40,17 +27,26 @@ namespace SpMedicalGroup.WebAPI.Repositories
 
         public List<Medico> Listar()
         {
-            return ctx.Medicos.ToList();
+            return ctx.Medicos.Select(m => new Medico()
+            {
+                IdUsuario = m.IdMedico,
+                IdMedico = m.IdMedico,
+                IdUsuarioNavigation = new Usuario()
+                {
+                    Nome = m.IdUsuarioNavigation.Nome
+                }
+            }).ToList();
         }
 
         public Medico ListarPorCRM(string CRM)
         {
-            return ctx.Medicos.FirstOrDefault(e => e.Crm == CRM);
+            return ctx.Medicos.Include(m => m.IdUsuarioNavigation).Include(m => m.IdClinicaNavigation).FirstOrDefault(e => e.Crm == CRM);
         }
 
         public Medico ListarPorId(int idMedico)
         {
-            return ctx.Medicos.FirstOrDefault(e => e.IdMedico == idMedico);
+            return ctx.Medicos.Include(m => m.IdUsuarioNavigation).Include(m => m.IdClinicaNavigation).FirstOrDefault(e => e.IdMedico == idMedico);
         }
     }
 }
+
